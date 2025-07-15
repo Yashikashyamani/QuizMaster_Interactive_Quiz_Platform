@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="quiz-header">
+                <h1>🧠 Advanced Quiz Challenge</h1>
+                <p>Test your knowledge across multiple categories</p>
+            </div>
+            
+            <div class="quiz-config">
+                <div class="config-group">
+                    <label for="category-select">Category:</label>
+                    <select id="category-select">
+                        <option value="mixed">Mixed Questions</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="geography">Geography</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                </div>
+                
+                <div class="config-group">
+                    <label for="difficulty-select">Difficulty:</label>
+                    <select id="difficulty-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="mixed">Mixed</option>
+                    </select>
+                </div>
+                
+                <div class="config-group">
+                    <label for="timer-toggle">Timer:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="timer-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="high-score">
+                <h3>🏆 High Score: <span id="high-score-display">0</span></h3>
+            </div>
+            
+            <button id="start-btn" class="btn primary">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="question-counter">1 / 10</span>
+                </div>
+                
+                <div class="quiz-stats">
+                    <div class="stat">
+                        <span class="stat-label">Score</span>
+                        <span id="current-score">0</span>
+                    </div>
+                    <div class="stat" id="timer-display">
+                        <span class="stat-label">Time</span>
+                        <span id="timer">30</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-category" id="question-category"></div>
+                <h2 id="question-text">Question will appear here</h2>
+                <div class="difficulty-badge" id="difficulty-badge"></div>
+            </div>
+
+            <div id="answers-container" class="answers-container">
+                <!-- Answer buttons will be generated here -->
+            </div>
+
+            <div class="quiz-controls">
+                <button id="next-btn" class="btn primary" style="display: none;">Next Question</button>
+                <button id="skip-btn" class="btn secondary">Skip Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="score-circle">
+                        <div class="score-text">
+                            <span id="final-score">0</span>
+                            <span class="score-total">/ 10</span>
+                        </div>
+                    </div>
+                    <h2 id="results-title">Great Job!</h2>
+                    <p id="results-message">You've completed the quiz!</p>
+                </div>
+
+                <div class="results-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="correct-answers">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="wrong-answers">0</div>
+                        <div class="stat-label">Wrong</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="skipped-answers">0</div>
+                        <div class="stat-label">Skipped</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="time-taken">0s</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="play-again-btn" class="btn primary">Play Again</button>
+                    <button id="review-btn" class="btn secondary">Review Answers</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Screen -->
+        <div id="review-screen" class="screen">
+            <div class="review-header">
+                <h2>📝 Answer Review</h2>
+                <button id="back-to-results" class="btn secondary">Back to Results</button>
+            </div>
+            <div id="review-content" class="review-content">
+                <!-- Review content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
