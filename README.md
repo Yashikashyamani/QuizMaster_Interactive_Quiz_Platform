@@ -1,6 +1,8 @@
 # QuizMaster_Interactive_Quiz_Platform
 # 🧠 Advanced Quiz App
 
+[Live Demo](https://quiz-master-interactive-quiz-platfo.vercel.app/)
+
 A modern quiz application built with HTML, CSS, and JavaScript featuring multiple categories, difficulty levels, and timer functionality.
 
 ## Features
